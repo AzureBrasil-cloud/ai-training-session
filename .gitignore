@@ -17,6 +17,7 @@
 mono_crash.*
 
 **/CrmPdfParser/**/launchSettings.json
+appsettings.[Dd]evelopment.json
 
 # Build results
 [Dd]ebug/

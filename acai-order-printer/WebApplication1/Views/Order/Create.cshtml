@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Faça seu pedido";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Envie a foto do seu pedido para iniciar a produção</h1>
+    
+    <form asp-controller="Order" asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="imageFile">Escolha a imagem:</label>
+            <input type="file" name="imageFile" id="imageFile" class="form-control" accept="image/*" />
+        </div>
+        <button type="submit" class="btn btn-primary">Fazer Pedido</button>
+    </form>
+    
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            @Html.Raw(ViewBag.Message)
+        </div>
+    }
+</div>
