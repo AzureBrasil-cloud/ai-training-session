@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Models;
 using WebApplication1.Services;
 
 namespace WebApplication1.Controllers.Orders;
@@ -28,12 +30,14 @@ public partial class OrderController
         // Use Azure Document Intelligence to extract text from the image
         var analyzeResult = await documentService.AnalyzeDocument(imageFile.OpenReadStream());
         // Use AI to build or order object
-        var order = await aiService.AnalyzeAcaiOrder(analyzeResult.Content);
+        var assistantOrder = await aiService.AnalyzeAcaiOrder(analyzeResult.Content);
+        var order = JsonSerializer.Deserialize<AcaiOrder>(assistantOrder, JsonSerializerOptions.Web);
 
         // Print the receipt
-        await PrintReceipt([order], logger);
+        var orderReceipt = order.ToReceipt();
+        await PrintReceipt(orderReceipt, logger);
 
-        ViewBag.Message = $"Pedido feito com sucesso! <br/> {string.Join("<br/>", order)}";
+        ViewBag.Message = $"Pedido feito com sucesso! <br/> {string.Join("<br/>", orderReceipt)}";
         return View("CreateAi");
     }
 }

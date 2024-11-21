@@ -34,6 +34,6 @@ public class AzureOpenAiService(IConfiguration configuration)
         });
 
         var message = await messages.GetLastAsync();
-        return message.Content.First()?.Text;
+        return message.Content.First()?.Text.ClearJson();
     }
 }
