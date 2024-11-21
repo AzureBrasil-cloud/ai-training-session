@@ -24,6 +24,27 @@ public partial class OrderController : Controller
         
         return true;
     }
+    private bool ValidateAudioFile(IFormFile? audioFile)
+    {
+        if (audioFile == null || audioFile.Length == 0)
+        {
+            ModelState.AddModelError("", "Please select an audio file to upload.");
+            return false;
+        }
+
+        // List of supported audio file extensions
+        var supportedTypes = new[] { "wav", "mp3", "m4a", "ogg", "aac", "flac" };
+        var fileExt = Path.GetExtension(audioFile.FileName).Substring(1).ToLower();
+
+        if (!supportedTypes.Contains(fileExt))
+        {
+            ModelState.AddModelError("", "Invalid file type. Only WAV, MP3, M4A, OGG, AAC, and FLAC are allowed.");
+            return false;
+        }
+
+        return true;
+    }
+
 
     private async Task PrintReceipt(List<string> receiptLines, ILogger<OrderController> logger)
     {

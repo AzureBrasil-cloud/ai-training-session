@@ -11,9 +11,11 @@ namespace WebApplication1
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddHttpLogging();
+            builder.Services.AddHttpClient();
 
             builder.Services.AddTransient<DocumentIntelligenceService>();
             builder.Services.AddTransient<AzureOpenAiService>();
+            builder.Services.AddTransient<AzureSpeechService>();
 
             var app = builder.Build();
 
