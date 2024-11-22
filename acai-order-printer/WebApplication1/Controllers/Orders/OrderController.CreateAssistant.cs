@@ -31,6 +31,7 @@ public partial class OrderController
         var analyzeResult = await documentService.AnalyzeDocument(imageFile.OpenReadStream());
         // Use AI to build or order object
         var assistantOrder = await aiService.AnalyzeAcaiOrder(analyzeResult.Content);
+        logger.LogInformation("Assistant Order: {AssistantOrder}", assistantOrder);
         var order = JsonSerializer.Deserialize<AcaiOrder>(assistantOrder, JsonSerializerOptions.Web);
 
         // Print the receipt

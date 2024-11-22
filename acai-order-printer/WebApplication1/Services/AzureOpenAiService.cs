@@ -19,8 +19,14 @@ public class AzureOpenAiService(IConfiguration configuration)
         {
             InitialMessages = { documentIntelligenceResponse }
         };
+
+        var runOptions = new RunCreationOptions
+        {
+            ResponseFormat = AssistantResponseFormat.JsonObject
+        };
+
         ThreadRun run = await assistantClient.CreateThreadAndRunAsync(configuration["AzureOpenAi:AssistantId"],
-            threadOptions);
+            threadOptions, runOptions);
 
         do
         {
