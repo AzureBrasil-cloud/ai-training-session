@@ -46,8 +46,8 @@ public class FoodReviewService(IConfiguration configuration)
         var inputPrice = configuration.GetValue<decimal>("AzureOpenAi:InputPrice"); // 1M tokens
         var outputPrice = configuration.GetValue<decimal>("AzureOpenAi:OutputPrice"); // 1M tokens
 
-        var inputTokensCost =  completion.Usage.InputTokenCount * inputPrice;
-        var outputTokensCost = completion.Usage.OutputTokenCount * outputPrice;
+        var inputTokensCost =  completion.Usage.InputTokenCount * (inputPrice)/1_000_000;
+        var outputTokensCost = completion.Usage.OutputTokenCount * (outputPrice)/1_000_000;
         
         return  inputTokensCost + outputTokensCost;
     }
@@ -59,6 +59,6 @@ public class FoodReviewService(IConfiguration configuration)
 
         AzureOpenAIClient azureClient = new(new Uri(endpoint), new AzureKeyCredential(key));
         
-        return azureClient.GetChatClient(configuration["AzureOpenAi:ImageModel"]!);
+        return azureClient.GetChatClient(configuration["AzureOpenAi:Model"]!);
     }
 }
