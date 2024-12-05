@@ -19,6 +19,8 @@ public partial class AssistantService
             ToolResources = new ToolResources(),
             Tools =
             {
+                EmailTool.Definition,
+                WhatsAppSenderTool.Definition,
                 BlogArticleWriterTool.Definition
             },
         };

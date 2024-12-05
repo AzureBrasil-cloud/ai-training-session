@@ -16,7 +16,5 @@ public class Constants
         <content>
         
         -----
-        Note 1: The result must in markdown format.
-        Note 2: You must use the tag <br> in order to break lines and start new paragraphs
         """;
 }

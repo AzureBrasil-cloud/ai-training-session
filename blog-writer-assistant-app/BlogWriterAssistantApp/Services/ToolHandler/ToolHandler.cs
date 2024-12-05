@@ -6,16 +6,21 @@ using OpenAI.Assistants;
 
 namespace BlogWriterAssistantApp.Services.ToolHandler;
 
-public class ToolHandler(IChatCompletionsService chatCompletionsService) : IToolHandler
+public class ToolHandler(IChatCompletionsService chatCompletionsService, ILogger<ToolHandler> logger) : IToolHandler
 {
     public async Task<ToolOutput> HandleAsync(RequiredAction requiredAction)
     {
         using var argumentsJson = JsonDocument.Parse(requiredAction.FunctionArguments);
 
-        // if (requiredAction.FunctionName == EmailTool.Name)
-        // {
-        //     return HandlerEmailTool(requiredAction, argumentsJson);
-        // }
+        if (requiredAction.FunctionName == EmailTool.Name)
+        {
+            return await HandlerEmailToolAsync(requiredAction, argumentsJson);
+        }
+        
+        if (requiredAction.FunctionName == WhatsAppSenderTool.Name)
+        {
+            return await HandlerWhatsAppToolAsync(requiredAction, argumentsJson);
+        }
         
         if (requiredAction.FunctionName == BlogArticleWriterTool.Name)
         {
@@ -23,6 +28,38 @@ public class ToolHandler(IChatCompletionsService chatCompletionsService) : ITool
         }
         
         return null!;
+    }
+
+    private async Task<ToolOutput> HandlerEmailToolAsync(RequiredAction requiredAction, JsonDocument argumentsJson)
+    {
+        string receiverEmail = argumentsJson.RootElement.GetProperty("receiverEmail").GetString()!;
+        string subject = argumentsJson.RootElement.GetProperty("subject").GetString()!;
+        string message = argumentsJson.RootElement.GetProperty("message").GetString()!;
+
+        var tool = new EmailTool();
+        
+        var result = await tool.ExecuteAsync(
+            logger, 
+            receiverEmail, 
+            subject,
+            message);
+        
+        return new ToolOutput(requiredAction.ToolCallId, result);
+    }
+    
+    private async Task<ToolOutput> HandlerWhatsAppToolAsync(RequiredAction requiredAction, JsonDocument argumentsJson)
+    {
+        string receiverNumber = argumentsJson.RootElement.GetProperty("receiverNumber").GetString()!;
+        string message = argumentsJson.RootElement.GetProperty("message").GetString()!;
+
+        var tool = new WhatsAppSenderTool();
+        
+        var result = await tool.ExecuteAsync(
+            logger, 
+            receiverNumber, 
+            message);
+        
+        return new ToolOutput(requiredAction.ToolCallId, result);
     }
 
     private async Task<ToolOutput> HandlerBlogArticleWriterTool(RequiredAction requiredAction, JsonDocument argumentsJson)
