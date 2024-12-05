@@ -1,4 +1,5 @@
 using BlogWriterAssistantApp.Models;
+using BlogWriterAssistantApp.Tools;
 using OpenAI.Assistants;
 #pragma warning disable OPENAI001
 
@@ -15,7 +16,11 @@ public partial class AssistantService
         {
             Name = request.Name,
             Instructions = request.Description,
-            ToolResources = new ToolResources()
+            ToolResources = new ToolResources(),
+            Tools =
+            {
+                BlogArticleWriterTool.Definition
+            },
         };
 
         Assistant assistant = await assistantClient.CreateAssistantAsync(configuration["AzureOpenAi:Model"]!, assistantOptions);

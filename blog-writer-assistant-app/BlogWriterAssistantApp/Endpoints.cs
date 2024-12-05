@@ -18,6 +18,11 @@ public static class Endpoints
             .WithName("CreateThread")
             .WithOpenApi();
 
+        app.MapPost("/run", async (RunRequest request, IAssistantService azureOpenApiService) => 
+                Results.Ok(await azureOpenApiService.RunAsync(request)))
+            .WithName("Run")
+            .WithOpenApi();
+        
         return app;
     }
 }
