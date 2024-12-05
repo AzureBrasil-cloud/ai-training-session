@@ -1,0 +1,28 @@
+using BlogWriterAssistantApp.Models;
+using OpenAI.Assistants;
+#pragma warning disable OPENAI001
+
+namespace BlogWriterAssistantApp.Services.Assistants;
+
+public partial class AssistantService
+{
+    public async Task<AssistantResponse> CreateAssistantAsync(CreateAssistantRequest request)
+    {
+        var client = GetClient();
+        var assistantClient = client.GetAssistantClient();
+        
+        var assistantOptions = new AssistantCreationOptions
+        {
+            Name = request.Name,
+            Instructions = request.Description,
+            ToolResources = new ToolResources()
+        };
+
+        Assistant assistant = await assistantClient.CreateAssistantAsync(configuration["AzureOpenAi:Model"]!, assistantOptions);
+
+        return new AssistantResponse(
+            assistant.Id, 
+            assistant.Name,
+            assistant.Instructions);
+    }
+}
