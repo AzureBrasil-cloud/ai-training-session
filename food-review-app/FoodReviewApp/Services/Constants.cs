@@ -14,10 +14,12 @@ public class Constants
           Medium = 3
           Good = 4
           VeryGood = 5
-          Unknown = 6
           
-          If you cannot assess, reply 'Unknown' (6)
-          Reply with only the corresponding number.
+          ----------------
+          
+          Reply only the corresponding number.
+          
+          ----------------
           
           Example 1
           Message: This is the best food in the world!
@@ -27,9 +29,6 @@ public class Constants
           Message: This food is not bad, but it’s nothing spectacular
           Result: 3
           
-          Example 3
-          Message: What is my name?
-          Result: 6
           """;
      
     public const string BinaryClassificationPrompt =
