@@ -17,11 +17,6 @@ public class ToolHandler(IChatCompletionsService chatCompletionsService, ILogger
             return await HandlerEmailToolAsync(requiredAction, argumentsJson);
         }
         
-        if (requiredAction.FunctionName == WhatsAppSenderTool.Name)
-        {
-            return await HandlerWhatsAppToolAsync(requiredAction, argumentsJson);
-        }
-        
         if (requiredAction.FunctionName == BlogArticleWriterTool.Name)
         {
             return await HandlerBlogArticleWriterTool(requiredAction, argumentsJson);
@@ -42,21 +37,6 @@ public class ToolHandler(IChatCompletionsService chatCompletionsService, ILogger
             logger, 
             receiverEmail, 
             subject,
-            message);
-        
-        return new ToolOutput(requiredAction.ToolCallId, result);
-    }
-    
-    private async Task<ToolOutput> HandlerWhatsAppToolAsync(RequiredAction requiredAction, JsonDocument argumentsJson)
-    {
-        string receiverNumber = argumentsJson.RootElement.GetProperty("receiverNumber").GetString()!;
-        string message = argumentsJson.RootElement.GetProperty("message").GetString()!;
-
-        var tool = new WhatsAppSenderTool();
-        
-        var result = await tool.ExecuteAsync(
-            logger, 
-            receiverNumber, 
             message);
         
         return new ToolOutput(requiredAction.ToolCallId, result);
