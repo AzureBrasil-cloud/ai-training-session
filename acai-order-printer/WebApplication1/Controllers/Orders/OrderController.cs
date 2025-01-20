@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers.Orders;
 
-public partial class OrderController : Controller
+public partial class OrderController(IConfiguration configuration) : Controller
 {
     private bool ValidateImage(IFormFile? imageFile)
     {
@@ -48,6 +48,13 @@ public partial class OrderController : Controller
 
     private async Task PrintReceipt(List<string> receiptLines, ILogger<OrderController> logger)
     {
+        var printerEnabled = configuration.GetValue<bool>("PrinterEnabled");
+        if (!printerEnabled)
+        {
+            logger.LogInformation("Printer is disabled. Skipping receipt print.");
+            return;
+        }
+
         try
         {
             var printer = new SerialPrinter("COM2", 115200);
