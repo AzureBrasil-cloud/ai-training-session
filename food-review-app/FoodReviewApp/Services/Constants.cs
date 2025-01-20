@@ -14,6 +14,7 @@ public class Constants
           Medium = 3
           Good = 4
           VeryGood = 5
+          Unknown = 6
           
           ----------------
           
@@ -28,6 +29,10 @@ public class Constants
           Example 2
           Message: This food is not bad, but it’s nothing spectacular
           Result: 3
+          
+          Example 3
+          Message: What is my name?
+          Result: 6
           
           """;
      

@@ -6,5 +6,6 @@ public enum ReviewResultType
     Bad,
     Medium,
     Good,
-    VeryGood
+    VeryGood,
+    Unknown
 }

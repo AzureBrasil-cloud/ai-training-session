@@ -20,6 +20,7 @@ public partial class AssistantService
             Tools =
             {
                 EmailTool.Definition,
+                WhatsAppSenderTool.Definition,
                 BlogArticleWriterTool.Definition
             },
         };

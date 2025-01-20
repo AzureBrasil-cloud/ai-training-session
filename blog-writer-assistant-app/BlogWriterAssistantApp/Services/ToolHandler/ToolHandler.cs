@@ -22,7 +22,27 @@ public class ToolHandler(IChatCompletionsService chatCompletionsService, ILogger
             return await HandlerBlogArticleWriterTool(requiredAction, argumentsJson);
         }
         
+        if (requiredAction.FunctionName == WhatsAppSenderTool.Name)
+        {
+            return await HandlerWhatsAppToolAsync(requiredAction, argumentsJson);
+        }
+        
         return null!;
+    }
+
+    private async Task<ToolOutput> HandlerWhatsAppToolAsync(RequiredAction requiredAction, JsonDocument argumentsJson)
+    {
+        string receiverNumber = argumentsJson.RootElement.GetProperty("receiverNumber").GetString()!;
+        string message = argumentsJson.RootElement.GetProperty("message").GetString()!;
+
+        var tool = new WhatsAppSenderTool();
+    
+        var result = await tool.ExecuteAsync(
+            logger, 
+            receiverNumber, 
+            message);
+    
+        return new ToolOutput(requiredAction.ToolCallId, result);
     }
 
     private async Task<ToolOutput> HandlerEmailToolAsync(RequiredAction requiredAction, JsonDocument argumentsJson)

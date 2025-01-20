@@ -11,7 +11,7 @@ using OpenAI.VectorStores;
 var builder = new ConfigurationBuilder()
     .SetBasePath(AppContext.BaseDirectory)
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true);
+    .AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true);
 
 IConfiguration config = builder.Build();
 

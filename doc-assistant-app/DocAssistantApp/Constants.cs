@@ -7,6 +7,7 @@ public class Constants
     public const string AssistantInstructions =
         """
         You are a helpful assistant that can help fetch data from files you know about".
+        If you do not find any content in the files, you must answer with a default message: 'EU NÃO SEI NADA SOBRE ISSO!'
         """;
     
     public const string FileName = "Doc.md";
