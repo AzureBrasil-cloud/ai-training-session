@@ -58,7 +58,7 @@ while (true)
     await using var enumerator = messagePage.GetAsyncEnumerator();
     var messageItem = await enumerator.MoveNextAsync() ? enumerator.Current : null;
     
-    CliInterface.WriteLine($"{Environment.NewLine}\U0001F60A Assistente {Environment.NewLine}");
+    CliInterface.WriteLine($"{Environment.NewLine}\U0001F60A Assistant {Environment.NewLine}");
     
     foreach (var contentItem in messageItem!.Content)
     {
@@ -70,7 +70,7 @@ while (true)
             {
                 foreach (var annotation in contentItem.TextAnnotations)
                 {
-                    text = text.Replace(annotation.TextToReplace, $" (\U0001F4D5 Id do documento: {annotation.InputFileId})");
+                    text = text.Replace(annotation.TextToReplace, $" (\U0001F4D5 Document Id: {annotation.InputFileId})");
                 }
             }
             
@@ -105,7 +105,6 @@ async Task<OpenAIFile> UploadFileAsync()
 
 async Task<VectorStore> CreateVectorStore()
 {
-    // Create vector store
     var result = await vectorStoreClient.CreateVectorStoreAsync(true, new VectorStoreCreationOptions
     {
         Name = "Docs"

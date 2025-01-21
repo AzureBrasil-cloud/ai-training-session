@@ -7,284 +7,281 @@ public class Constants
     public const string AssistantInstructions =
         """
         You are a helpful assistant that can help fetch data from files you know about".
-        If you do not find any content in the files, you must answer with a default message: 'EU NÃO SEI NADA SOBRE ISSO!'
         """;
     
     public const string FileName = "Doc.md";
     
     public const string FileContent =
         """
-        # O que é o Serviço OpenAI do Azure?
+        # What is the Azure OpenAI Service?
         
-        ## Artigo
-        **Publicado em:** 11/11/2024  
-        **Colaboradores:** 10  
-        
-        ---
-        
-        ## Índice
-        - [IA Responsável](#ia-responsável)
-        - [Introdução ao Serviço OpenAI do Azure](#introdução-ao-serviço-openai-do-azure)
-        - [Comparar o OpenAI do Azure e o OpenAI](#comparar-o-openai-do-azure-e-o-openai)
-        - [Conceitos Principais](#conceitos-principais)
-        - [Próximas Etapas](#próximas-etapas)
+        ## Article
+        **Published on:** 11/11/2024  
+        **Contributors:** 10  
         
         ---
         
-        ## IA Responsável
-        A Microsoft está comprometida com o avanço da IA baseado em princípios que colocam as pessoas em primeiro lugar. O uso responsável de IA no Azure inclui:
-        - Filtros de conteúdo para prevenir abusos.
-        - Diretrizes de IA responsável.
-        - Código de conduta para o serviço.
+        ## Index
+        - [Responsible AI](#responsible-ai)
+        - [Introduction to Azure OpenAI Service](#introduction-to-azure-openai-service)
+        - [Compare Azure OpenAI and OpenAI](#compare-azure-openai-and-openai)
+        - [Key Concepts](#key-concepts)
+        - [Next Steps](#next-steps)
         
         ---
         
-        ## Introdução ao Serviço OpenAI do Azure
-        O Serviço OpenAI do Azure fornece acesso à API REST e SDKs para os modelos de linguagem avançados da OpenAI, como:
+        ## Responsible AI
+        Microsoft is committed to advancing AI based on principles that put people first. Responsible use of AI on Azure includes:
+        - Content filters to prevent abuse.
+        - Responsible AI guidelines.
+        - Service code of conduct.
+        
+        ---
+        
+        ## Introduction to Azure OpenAI Service
+        Azure OpenAI Service provides access to the REST API and SDKs for OpenAI's advanced language models, such as:
         - GPT-4o
-        - GPT-4 Turbo com Visão
+        - GPT-4 Turbo with Vision
         - GPT-3.5-Turbo
-        - Modelos de Embeddings
+        - Embedding Models
         
-        ### Recursos:
-        - **Ajuste fino:** disponível para modelos como GPT-4o-mini e GPT-3.5-Turbo.
-        - **Rede virtual e link privado:** suportados.
-        - **Interface do usuário:** via Portal do Azure e Estúdio de IA do Azure.
+        ### Features:
+        - **Fine-tuning:** Available for models like GPT-4o-mini and GPT-3.5-Turbo.
+        - **Virtual network and private link:** Supported.
+        - **User interface:** Available via Azure Portal and Azure AI Studio.
         
-        #### Como começar:
-        1. **Criar um recurso:** Use o portal do Azure, CLI ou PowerShell.
-        2. **Implantar um modelo:** Escolha um modelo para usar na API.
-        3. **Explorar recursos:** Experimente os playgrounds do Estúdio de IA ou chame APIs.
-        
-        ---
-        
-        ## Comparar o OpenAI do Azure e o OpenAI
-        O OpenAI do Azure combina os modelos avançados do OpenAI com:
-        - Segurança do Azure.
-        - Suporte a rede privada.
-        - Disponibilidade regional.
-        - Filtragem de conteúdo de IA responsável.
-        
-        Os clientes podem usar a mesma API em ambas as plataformas, garantindo compatibilidade.
+        #### How to get started:
+        1. **Create a resource:** Use the Azure portal, CLI, or PowerShell.
+        2. **Deploy a model:** Choose a model to use in the API.
+        3. **Explore features:** Try the AI Studio playgrounds or call APIs.
         
         ---
         
-        ## Conceitos Principais
-        ### Solicitações e Conclusões
-        - **Ponto de extremidade:** fornece uma interface para entrada/saída do modelo.
-        - **Exemplo:**
+        ## Compare Azure OpenAI and OpenAI
+        Azure OpenAI combines OpenAI’s advanced models with:
+        - Azure security.
+        - Private network support.
+        - Regional availability.
+        - Responsible AI content filtering.
+        
+        Customers can use the same API on both platforms, ensuring compatibility.
+        
+        ---
+        
+        ## Key Concepts
+        ### Requests and Completions
+        - **Endpoint:** Provides an interface for model input/output.
+        - **Example:**
           - **Prompt:** `count to 5 in a for loop`
-          - **Conclusão:** `for i in range(1, 6): print(i)`
+          - **Completion:** `for i in range(1, 6): print(i)`
         
         ### Tokens
-        - **Texto:** Dividido em partes menores. Ex.: "hambúrguer" = "ham", "bur", "ger".
-        - **Imagem:** Calculado com base nos detalhes e dimensões da imagem.
+        - **Text:** Split into smaller parts. E.g., "hamburger" = "ham", "bur", "ger."
+        - **Image:** Calculated based on details and dimensions.
         
-        #### Exemplo de cálculo de tokens:
-        - **Imagem com muitos detalhes:**
-          - **Modelo:** GPT-4 Turbo com Visão.
-          - **Dimensão inicial:** 2048x4096 pixels.
-          - **Cálculo:** 6 peças x 170 tokens + 85 tokens base = **1.105 tokens**.
-        
-        ---
-        
-        ## Engenharia de Prompt
-        Os modelos GPT são baseados em prompts, e o design do prompt influencia diretamente a resposta do modelo.
-        
-        ### Dicas:
-        - Teste e ajuste prompts para obter melhores resultados.
-        - Considere a sensibilidade do modelo ao contexto.
+        #### Example of token calculation:
+        - **Highly detailed image:**
+          - **Model:** GPT-4 Turbo with Vision.
+          - **Initial dimension:** 2048x4096 pixels.
+          - **Calculation:** 6 pieces x 170 tokens + 85 base tokens = **1,105 tokens**.
         
         ---
         
-        ## Modelos Disponíveis
-        ### Texto
-        - GPT-3, GPT-3.5, GPT-4 (versões com ajuste fino disponíveis).
-          
-        ### Imagem
-        - Modelos DALL-E: Geram imagens a partir de texto.
+        ## Prompt Engineering
+        GPT models are prompt-based, and prompt design directly influences the model's response.
         
-        ### Fala
-        - Whisper: Transcrevem e traduzem fala em texto.
-        - Texto para Fala: Convertem texto em áudio.
+        ### Tips:
+        - Test and refine prompts for better results.
+        - Consider the model's sensitivity to context.
         
         ---
         
-        ## Próximas Etapas
-        - Explore os modelos disponíveis no OpenAI do Azure.
-        - Aprenda mais no [guia oficial de modelos](#).
+        ## Available Models
+        ### Text
+        - GPT-3, GPT-3.5, GPT-4 (versions with fine-tuning available).
+        
+        ### Image
+        - DALL-E Models: Generate images from text.
+        
+        ### Speech
+        - Whisper: Transcribe and translate speech to text.
+        - Text-to-Speech: Convert text to audio.
+        
+        ---
+        
+        ## Next Steps
+        - Explore the available models in Azure OpenAI.
+        - Learn more in the [official model guide](#).
         
         ----------------------
         
-        # Visão geral do Serviço de Aplicativos
-        **Artigo**  
-        *16/10/2024*  
-        **28 colaboradores**
+        # Overview of App Service
+        **Article**  
+        *10/16/2024*  
+        **28 contributors**
         
         ---
         
-        ## Neste artigo
-        - [Por que usar o Serviço de Aplicativo?](#por-que-usar-o-serviço-de-aplicativo)
-        - [Serviço de Aplicativo no Linux](#serviço-de-aplicativo-no-linux)
-        - [Ambiente do Serviço de Aplicativo](#ambiente-do-serviço-de-aplicativo)
-        - [Próxima etapa](#próxima-etapa)
+        ## In this article
+        - [Why use App Service?](#why-use-app-service)
+        - [App Service on Linux](#app-service-on-linux)
+        - [App Service Environment](#app-service-environment)
+        - [Next steps](#next-steps)
         
         ---
         
-        > **Observação**  
-        > A partir de 1º de junho de 2024, todos os aplicativos recém-criados do Serviço de Aplicativo terão a opção de gerar um nome do host padrão exclusivo usando a convenção de nomenclatura `<app-name>-<random-hash>.<region>.azurewebsites.net`. Os nomes de aplicativos existentes permanecerão inalterados.  
-        > **Exemplo:** `myapp-ds27dh7271aah175.westus-01.azurewebsites.net`  
-        > Para obter mais detalhes, consulte [Nome do Host Padrão Exclusivo para o Recurso do Serviço de Aplicativo](#).
+        > **Note**  
+        > Starting June 1, 2024, all newly created App Service applications will have the option to generate a unique default hostname using the naming convention `<app-name>-<random-hash>.<region>.azurewebsites.net`. Existing application names will remain unchanged.  
+        > **Example:** `myapp-ds27dh7271aah175.westus-01.azurewebsites.net`  
+        > For more details, see [Unique Default Hostname for App Service Resource](#).
         
         ---
         
-        O **Serviço de Aplicativo do Azure** é um serviço baseado em HTTP para hospedar aplicativos Web, APIs REST e back-ends móveis. Suporte para várias linguagens, incluindo **.NET, .NET Core, Java, Node.js, PHP e Python**, com execução em ambientes **Windows** e **Linux**.  
-        Benefícios incluem: **segurança aprimorada, balanceamento de carga, dimensionamento automático e gerenciamento automatizado**, além de recursos de **DevOps**.
+        The **Azure App Service** is an HTTP-based service for hosting web applications, REST APIs, and mobile backends. It supports multiple languages, including **.NET, .NET Core, Java, Node.js, PHP, and Python**, running on both **Windows** and **Linux** environments.  
+        Benefits include: **enhanced security, load balancing, auto-scaling, and automated management**, along with **DevOps** features.
         
-        **Modelo de precificação:**  
-        Paga-se pelos recursos do **Plano do Serviço de Aplicativo** utilizados. Para mais detalhes, confira [Visão geral dos Planos do Serviço de Aplicativo do Azure](#).
-        
-        ---
-        
-        ## Por que usar o Serviço de Aplicativo?
-        
-        ### Principais recursos
-        - **Variedade de linguagens e estruturas**: ASP.NET, Java, Node.js, PHP, Python, entre outros.
-        - **Ambiente gerenciado**: Atualizações automáticas de SO e frameworks.
-        - **Suporte a contêineres**: Imagens personalizadas e sidecars em Docker.
-        - **Otimização DevOps**: CI/CD com GitHub, Azure DevOps, entre outros.
-        - **Escalabilidade global**: Dimensionamento automático e alta disponibilidade.
-        - **Conexões híbridas**: Integração com SaaS e dados locais.
-        - **Segurança e conformidade**: ISO, SOC e PCI.
-        - **Autenticação**: Com suporte a Microsoft Entra ID, Google, Facebook, e mais.
-        - **Modelos de aplicativos**: Disponíveis no Azure Marketplace.
-        - **Integração de ferramentas**: Suporte ao Visual Studio, IntelliJ, Maven, etc.
-        - **Código sem servidor**: Azure Functions para execuções sob demanda.
+        **Pricing model:**  
+        You pay for the resources used by the **App Service Plan**. For more details, check [Overview of Azure App Service Plans](#).
         
         ---
         
-        ## Serviço de Aplicativo no Linux
+        ## Why use App Service?
         
-        O Serviço de Aplicativo no Linux suporta:
-        - **Linguagens internas**: Node.js, Java, PHP, Python, .NET Core.
-        - **Imagens personalizadas**: Opção para criar contêineres.
-        
-        ### Limitações
-        - Não disponível no tipo de preço **Compartilhado**.
-        - **Armazenamento Azure** com latência variável. Para alta performance, use contêineres personalizados.
-        
-        ---
-        
-        ## Ambiente do Serviço de Aplicativo
-        
-        O **Ambiente do Serviço de Aplicativo (ASE)** oferece:
-        - **Isolamento completo**.
-        - **Segurança aprimorada**.
-        - **Alta escala** para workloads intensivas.
-        
-        > Para mais detalhes, consulte a [comparação entre ASE e Serviço de Aplicativo](#).
+        ### Key features
+        - **Wide variety of languages and frameworks:** ASP.NET, Java, Node.js, PHP, Python, among others.
+        - **Managed environment:** Automatic OS and framework updates.
+        - **Container support:** Custom images and Docker sidecars.
+        - **DevOps optimization:** CI/CD with GitHub, Azure DevOps, and others.
+        - **Global scalability:** Auto-scaling and high availability.
+        - **Hybrid connections:** Integration with SaaS and on-premises data.
+        - **Security and compliance:** ISO, SOC, and PCI.
+        - **Authentication:** Supports Microsoft Entra ID, Google, Facebook, and more.
+        - **Application templates:** Available in the Azure Marketplace.
+        - **Tool integration:** Support for Visual Studio, IntelliJ, Maven, etc.
+        - **Serverless code:** Azure Functions for on-demand executions.
         
         ---
         
-        ## Próxima etapa
-        Explore os recursos avançados do Serviço de Aplicativo e escolha a configuração ideal para sua aplicação no Azure.
+        ## App Service on Linux
+        
+        App Service on Linux supports:
+        - **Built-in languages:** Node.js, Java, PHP, Python, .NET Core.
+        - **Custom images:** Option to create containers.
+        
+        ### Limitations
+        - Not available in the **Shared** pricing tier.
+        - **Azure Storage** with variable latency. For high performance, use custom containers.
+        
+        ---
+        
+        ## App Service Environment
+        
+        The **App Service Environment (ASE)** offers:
+        - **Complete isolation.**
+        - **Enhanced security.**
+        - **High scale** for intensive workloads.
+        
+        > For more details, see the [comparison between ASE and App Service](#).
+        
+        ---
+        
+        ## Next steps
+        Explore the advanced features of App Service and choose the ideal configuration for your application on Azure.
         
         ----------------------
         
-        # O que é o SQL Azure?
-        **Artigo**  
-        *27/09/2024*  
-        **20 colaboradores**
+        # What is Azure SQL?
+        **Article**  
+        *09/27/2024*  
+        **20 contributors**
         
         ---
         
-        ## Neste artigo
-        - [Visão geral](#visão-geral)
-        - [Comparação de serviço](#comparação-de-serviço)
-        - [Tabela de comparação](#tabela-de-comparação)
-        - [Custo](#custo)
-        - [Administração](#administração)
-        - [SLA (Contrato de Nível de Serviço)](#sla-contrato-de-nível-de-serviço)
-        - [Tempo para mover para o Azure](#tempo-para-mover-para-o-azure)
-        - [Criar e gerenciar recursos de SQL do Azure com o portal do Azure](#criar-e-gerenciar-recursos-de-sql-do-azure-com-o-portal-do-azure)
+        ## In this article
+        - [Overview](#overview)
+        - [Service Comparison](#service-comparison)
+        - [Comparison Table](#comparison-table)
+        - [Cost](#cost)
+        - [Administration](#administration)
+        - [SLA (Service Level Agreement)](#sla-service-level-agreement)
+        - [Time to move to Azure](#time-to-move-to-azure)
+        - [Create and manage Azure SQL resources using the Azure portal](#create-and-manage-azure-sql-resources-using-the-azure-portal)
         
         ---
         
-        ## Visão geral
-        O **SQL do Azure** é uma família de produtos gerenciados, seguros e inteligentes que usam o mecanismo de banco de dados do SQL Server na nuvem Azure. Ele oferece migração fácil, continuidade no uso das ferramentas conhecidas e aproveita as habilidades já existentes para maximizar o potencial de soluções em nuvem.
+        ## Overview
+        **Azure SQL** is a family of managed, secure, and intelligent products that use the SQL Server database engine in the Azure cloud. It offers easy migration, continuity with familiar tools, and leverages existing skills to maximize the potential of cloud solutions.
         
-        Os produtos incluem:
-        1. **Banco de Dados SQL do Azure**: serviço de banco de dados inteligente e gerenciado.
-        2. **Instância Gerenciada de SQL do Azure**: instância como serviço inteligente para migração em escala.
-        3. **SQL Server em VMs do Azure**: controle total com lift-and-shift de workloads do SQL Server.
-        
-        ---
-        
-        ## Comparação de serviço
-        
-        ### Opções disponíveis:
-        - **Banco de Dados SQL do Azure**: Melhor para aplicativos de nuvem modernos e desenvolvimento ágil.
-        - **Instância Gerenciada de SQL do Azure**: Ideal para lift-and-shift com mínima alteração.
-        - **SQL Server em VMs do Azure**: Perfeito para acesso ao sistema operacional e controle total.
+        The products include:
+        1. **Azure SQL Database:** An intelligent, managed database service.
+        2. **Azure SQL Managed Instance:** An intelligent instance-as-a-service for large-scale migrations.
+        3. **SQL Server on Azure VMs:** Full control with lift-and-shift of SQL Server workloads.
         
         ---
         
-        ## Tabela de comparação
-        | **Recurso**                      | **Banco de Dados SQL**          | **Instância Gerenciada de SQL** | **SQL Server em VMs**          |
-        |-----------------------------------|----------------------------------|----------------------------------|----------------------------------|
-        | **Compatibilidade**               | Alta no nível do banco          | Alta no nível da instância       | Total                          |
-        | **SLA**                           | 99,995%                         | 99,99%                          | Até 99,99%                     |
-        | **Controle**                      | Gerenciado pelo Azure           | Parcialmente gerenciado          | Controle total                 |
-        | **Backups e recuperação**         | Automáticos                     | Automáticos                     | Manuais ou automatizados       |
-        | **Alteração de recursos**         | Online                          | Online                          | Requer tempo de inatividade    |
-        | **Melhor uso**                    | Aplicativos modernos            | Migração para a nuvem            | Workloads complexos            |
+        ## Service Comparison
+        
+        ### Available options:
+        - **Azure SQL Database:** Best for modern cloud applications and agile development.
+        - **Azure SQL Managed Instance:** Ideal for lift-and-shift with minimal changes.
+        - **SQL Server on Azure VMs:** Perfect for OS-level access and full control.
         
         ---
         
-        ## Custo
-        Os custos variam conforme o modelo (PaaS ou IaaS) e as configurações escolhidas.  
-        - **Banco de Dados SQL e Instância Gerenciada de SQL**: Preço por hora com recursos pré-configurados e administrados pelo Azure.
-        - **SQL Server em VMs**: Controle total sobre os custos de licenciamento e infraestrutura.
-        
-        > Para calcular os custos, use a [Calculadora de preços do Azure](https://azure.microsoft.com/pt-br/pricing/calculator/).
-        
-        ---
-        
-        ## Administração
-        - **Banco de Dados SQL e Instância Gerenciada de SQL**: Administração simplificada, sem necessidade de gerenciar sistema operacional ou atualizações.
-        - **SQL Server em VMs**: Controle total do sistema operacional e instância, mas maior responsabilidade administrativa.
+        ## Comparison Table
+        | **Feature**                   | **SQL Database**               | **SQL Managed Instance**        | **SQL Server on VMs**            |
+        |-------------------------------|--------------------------------|---------------------------------|----------------------------------|
+        | **Compatibility**             | High at database level        | High at instance level          | Total                            |
+        | **SLA**                       | 99.995%                       | 99.99%                         | Up to 99.99%                    |
+        | **Control**                   | Managed by Azure              | Partially managed               | Full control                    |
+        | **Backups and recovery**      | Automatic                     | Automatic                      | Manual or automated             |
+        | **Resource changes**          | Online                        | Online                         | Requires downtime               |
+        | **Best use**                  | Modern applications           | Cloud migration                 | Complex workloads               |
         
         ---
         
-        ## SLA (Contrato de Nível de Serviço)
-        - **Banco de Dados SQL e Instância Gerenciada de SQL**: SLA de disponibilidade de 99,99%.
-        - **SQL Server em VMs**: SLA de 99,95% a 99,99%, dependendo da configuração de alta disponibilidade.
+        ## Cost
+        Costs vary depending on the model (PaaS or IaaS) and chosen configurations.  
+        - **Azure SQL Database and Managed Instance:** Hourly pricing with pre-configured, Azure-managed resources.
+        - **SQL Server on VMs:** Full control over licensing and infrastructure costs.
+        
+        > To calculate costs, use the [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/).
         
         ---
         
-        ## Tempo para mover para o Azure
-        - **Banco de Dados SQL do Azure**: Ideal para novos aplicativos projetados para a nuvem.
-        - **Instância Gerenciada de SQL**: Simplifica a migração com mínima alteração.
-        - **SQL Server em VMs**: Perfeito para migração lift-and-shift sem necessidade de reestruturar aplicativos.
+        ## Administration
+        - **Azure SQL Database and Managed Instance:** Simplified administration without the need to manage the OS or updates.
+        - **SQL Server on VMs:** Full control over the OS and instance, but with greater administrative responsibility.
         
         ---
         
-        ## Criar e gerenciar recursos de SQL do Azure com o portal do Azure
-        O portal do Azure permite criar e gerenciar recursos do SQL do Azure, como:
-        - Bancos de Dados SQL
-        - Instâncias Gerenciadas de SQL
-        - Máquinas virtuais do SQL Server
-        
-        > **Observação**  
-        > O SQL do Azure é uma família de serviços e não um recurso único. Para criar novos recursos, selecione **+ Criar** no portal do Azure.
+        ## SLA (Service Level Agreement)
+        - **Azure SQL Database and Managed Instance:** 99.99% availability SLA.
+        - **SQL Server on VMs:** SLA of 99.95% to 99.99%, depending on high-availability configuration.
         
         ---
         
-        ## Conteúdo relacionado
-        - [Criar um Banco de Dados SQL do Azure](https://azure.microsoft.com/pt-br/services/sql-database/)
-        - [Migrar para o SQL do Azure](https://learn.microsoft.com/pt-br/azure/sql-database/sql-database-migration-guidance)
-        - [Preços do Banco de Dados SQL](https://azure.microsoft.com/pt-br/pricing/details/sql-database/)
+        ## Time to move to Azure
+        - **Azure SQL Database:** Ideal for new applications designed for the cloud.
+        - **Azure SQL Managed Instance:** Simplifies migration with minimal changes.
+        - **SQL Server on VMs:** Perfect for lift-and-shift migration without restructuring applications.
         
+        ---
+        
+        ## Create and manage Azure SQL resources using the Azure portal
+        The Azure portal allows you to create and manage Azure SQL resources such as:
+        - SQL Databases
+        - SQL Managed Instances
+        - SQL Server Virtual Machines
+        
+        > **Note**  
+        > Azure SQL is a family of services, not a single resource. To create new resources, select **+ Create** in the Azure portal.
+        
+        ---
+        
+        ## Related content
+        - [Create an Azure SQL Database](https://azure.microsoft.com/en-us/services/sql-database/)
+        - [Migrate to Azure SQL](https://learn.microsoft.com/en-us/azure/sql-database/sql-database-migration-guidance)
+        - [Azure SQL Pricing](https://azure.microsoft.com/en-us/pricing/details/sql-database/)
         """;
-
 }

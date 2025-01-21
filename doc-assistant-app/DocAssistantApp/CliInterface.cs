@@ -6,7 +6,7 @@ public static class CliInterface
 {
     public static void WritePanel()
     {
-        var panel = new Panel("Assistente com acesso a dados privados")
+        var panel = new Panel("Assistant with access to private data")
         {
             Header = new PanelHeader("Doc assistant"),
             Padding = new Padding(3, 0, 3, 0),
@@ -18,7 +18,7 @@ public static class CliInterface
     
     public static string ReadConsole()
     {
-        return AnsiConsole.Prompt(new TextPrompt<string>("\U0001F449 Como o [bold yellow]assistente[/] pode te ajudar?"));
+        return AnsiConsole.Prompt(new TextPrompt<string>("\U0001F449 How can the [bold yellow]assistant[/] help you?"));
     }
     
     public static void WriteLine(string message)
