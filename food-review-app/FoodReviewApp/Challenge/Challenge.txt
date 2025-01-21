@@ -1,0 +1,12 @@
+Challenge: If you type "What is my name?" (input not related to food review), the app will break. The app must respond with "Unknown" type.
+
+- Add a new options type to the Constants.cs file. Property MultiClassificationPrompt
+Unknown = 6
+
+- Add a new example to the Constants.cs file. Property MultiClassificationPrompt
+Example 3
+Message: What is my name?
+Result: 6
+
+- Add a new value for ReviewResultType enum
+Unknown

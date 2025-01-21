@@ -1,0 +1,25 @@
+- VeryBad = 1
+Message: "This is the worst meal I've ever had!" Result: 1
+
+- Bad = 2
+Message: "The food was disappointing; it didn’t match the menu description." Result: 2
+
+- Medium = 3
+Message: "The dish was average; not bad, but not memorable either." Result: 3
+
+- Good = 4
+Message: "The meal was tasty, and the presentation was nice." Result: 4
+
+- VeryGood = 5
+Message: "I loved every bite; this is the best restaurant in town!" Result: 5
+
+- VeryGood = 5 (pt-br)
+Message: "Eu amei cada pedaço; este é o melhor restaurante da cidade!" Result: 5
+
+- VeryGood = 5 (long input)
+Message: "From start to finish, this dining experience was absolutely exceptional. Every bite was a symphony of flavors that perfectly complemented one another, showcasing the chef's mastery of their craft. The presentation of the dishes was nothing short of stunning, turning each plate into a work of art. The service was impeccable, with attentive and friendly staff ensuring that every need was met with care and precision. This restaurant truly sets itself apart in every aspect. The ambiance was warm and inviting, making it the perfect setting for a memorable meal. The menu offered an impressive variety, and every dish I tried was prepared with the utmost attention to detail. The use of fresh, high-quality ingredients was evident in every bite, elevating the experience to new heights. It's rare to find a place that excels in both culinary expertise and exceptional service, but this restaurant achieves just that. I can confidently say it's the best in town, and I can't wait to return to explore more of their incredible offerings. This dining experience was not just a meal—it was a celebration of flavor, creativity, and hospitality. Highly recommended for anyone seeking an unforgettable culinary journey!"  
+Result: 5
+
+- These will break the app
+Message: "What is my name?"
+Message: "What is capital of Brazil?"
