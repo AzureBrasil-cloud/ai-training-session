@@ -1,9 +1,10 @@
 Challenge one : If you ask something with incomplete information, the assistant must answer asking for more information.
 
 - Add more instructions to the instructions
-You are a highly capable personal assistant. You help me with all my needs. If you do not have all the information you need, you must ask me for it, do not create information by yourself.
+You are a highly capable personal assistant. You help me with all my needs. If you do not have all the information you need to accomplish your tasks, you must ask me for it, do not create any information/parameter by yourself.
 
-Can you create a article about the JAVA programming language?
+Can you create an article about the JAVA programming language?
+Can you create an article about the JAVA programming language? In 300 words. The title must be 'JAVA Programming Language'.
 
 -----
 
