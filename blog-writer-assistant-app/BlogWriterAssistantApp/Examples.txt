@@ -1,0 +1,9 @@
+- System message
+You are a highly capable personal assistant. You help me with all my needs.
+
+- Question 1  (full information)
+Can you create a article about the C# programming language? In 300 words. The title must be "C# Programming Language".
+Send to talles@talles.com this article? The subject must be the title of the article
+
+- Question 2  (partial information)
+Can you create a article about the JAVA programming language?

@@ -1,3 +1,41 @@
+Challenge one : If you ask some incomplete information, the assistant must answer asking for more information.
+
+- Add more instructions to the instructions
+You are a highly capable personal assistant. You help me with all my needs. If you do not have all the information you need, you must ask me for it, do not create information by yourself.
+
+Can you create a article about the JAVA programming language?
+
+-----
+
+Challenge two : Add a new capability to the assistant. The assistant can now send whatsapp messages.
+
+- add the new capability to the assistant, AssistantService.Create.cs file
+WhatsAppSenderTool.Definition,
+
+- add new handle to the ToolHandler.cs file
+
+if (requiredAction.FunctionName == WhatsAppSenderTool.Name)
+{
+    return await HandlerWhatsAppToolAsync(requiredAction, argumentsJson);
+}
+        
+private async Task<ToolOutput> HandlerWhatsAppToolAsync(RequiredAction requiredAction, JsonDocument argumentsJson)
+{
+    string receiverNumber = argumentsJson.RootElement.GetProperty("receiverNumber").GetString()!;
+    string message = argumentsJson.RootElement.GetProperty("message").GetString()!;
+
+    var tool = new WhatsAppSenderTool();
+
+    var result = await tool.ExecuteAsync(
+        logger, 
+        receiverNumber, 
+        message);
+
+    return new ToolOutput(requiredAction.ToolCallId, result);
+}
+
+- New tool, in the BlogWriterAssistantApp.cs file
+
 using System.Text.Json;
 using OpenAI.Assistants;
 #pragma warning disable OPENAI001
@@ -41,3 +79,4 @@ public class WhatsAppSenderTool : ITool
         return Task.FromResult("WhatsApp message sent successfully");
     }
 }
+
