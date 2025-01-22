@@ -1,7 +1,6 @@
 Examples:
 What is going to start in June 1, 2024? -> Line 134
- What are the App Service on Linux limitations? -> Line 167
+What are the App Service on Linux limitations? -> Line 171
 
 - These infos are not in file
 Message: "What is capital of Brazil?"
-Message: "What is my name?"
