@@ -6,4 +6,4 @@ Can you create an article about the C# programming language? In 300 words. The t
 Send to talles@talles.com this article? The subject must be the title of the article
 
 - Question 2  (partial information)
-Can you create a article about the JAVA programming language?
+Can you create an article about the JAVA programming language?
