@@ -1,4 +1,4 @@
-Challenge: If you type "What is my name?" (input not related to food review), the app will break. The app must respond with "Unknown" type.
+Challenge: If you type "What is the capital of brazil?" (input not related to food review), the app will break. The app must respond with "Unknown" type.
 
 - Add a new options type to the Constants.cs file. Property MultiClassificationPrompt
 Unknown = 6

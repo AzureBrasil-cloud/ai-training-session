@@ -21,5 +21,4 @@ Message: "From start to finish, this dining experience was absolutely exceptiona
 Result: 5
 
 - These will break the app
-Message: "What is my name?"
 Message: "What is capital of Brazil?"
