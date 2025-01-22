@@ -14,7 +14,6 @@ public class Constants
           Medium = 3
           Good = 4
           VeryGood = 5
-          Unknown = 6
           
           ----------------
           
