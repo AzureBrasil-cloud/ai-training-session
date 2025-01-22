@@ -81,3 +81,5 @@ public class WhatsAppSenderTool : ITool
     }
 }
 
+- Input
+Can you create an article about the C# programming language? In 300 words. The title must be 'C# Programming Language'. Send this article to me via WhatsApp. My tel number is 11999999999.
