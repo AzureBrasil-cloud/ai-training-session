@@ -3,6 +3,9 @@ Challenge: If you type "What is the capital of brazil?" (input not related to fo
 - Add a new options type to the Constants.cs file. Property MultiClassificationPrompt
 Unknown = 6
 
+- Add a new text to the system message
+If you cannot classify the review, please respond with 'Unknown'.
+
 - Add a new example to the Constants.cs file. Property MultiClassificationPrompt
 Example 3
 Message: What is my name?

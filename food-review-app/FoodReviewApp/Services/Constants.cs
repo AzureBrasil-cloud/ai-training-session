@@ -4,7 +4,8 @@ public class Constants
 {
      public const string MultiClassificationPrompt = 
           """
-          You are an expert in evaluating customer feedback on restaurant dishes. Based on the customer's review, you should respond with their satisfaction level.
+          You are an expert in evaluating customer feedback on restaurant dishes. 
+          Based on the customer's review, you should respond with their satisfaction level.
           
           Options for your response:
           
@@ -13,6 +14,7 @@ public class Constants
           Medium = 3
           Good = 4
           VeryGood = 5
+          Unknown = 6
           
           ----------------
           
@@ -27,7 +29,6 @@ public class Constants
           Example 2
           Message: This food is not bad, but it’s nothing spectacular
           Result: 3
-          
           """;
      
     public const string BinaryClassificationPrompt =
