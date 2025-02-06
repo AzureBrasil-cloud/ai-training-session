@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Text.Json;
+﻿using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
 using WebApplication1.Services;
@@ -15,7 +14,6 @@ public partial class OrderController
     }
 
     [HttpPost("/order/create/ai")]
-    [Experimental("OPENAI001")]
     public async Task<IActionResult> CreateAi(
         IFormFile? imageFile,
         [FromServices] DocumentIntelligenceService documentService,

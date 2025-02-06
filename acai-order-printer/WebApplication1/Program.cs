@@ -1,3 +1,6 @@
+using Azure;
+using Azure.AI.OpenAI;
+using OpenAI.Chat;
 using WebApplication1.Services;
 
 namespace WebApplication1
@@ -12,6 +15,16 @@ namespace WebApplication1
             builder.Services.AddControllersWithViews();
             builder.Services.AddHttpLogging();
             builder.Services.AddHttpClient();
+
+            builder.Services.AddSingleton<AzureOpenAIClient>(new AzureOpenAIClient(
+                new Uri(builder.Configuration["AzureOpenAi:Endpoint"]),
+                new AzureKeyCredential(builder.Configuration["AzureOpenAi:Key"])));
+
+            builder.Services.AddSingleton<ChatClient>(sp =>
+            {
+                var azureAiClient = sp.GetRequiredService<AzureOpenAIClient>();
+                return azureAiClient.GetChatClient(builder.Configuration["AzureOpenAi:Model"]);
+            });
 
             builder.Services.AddTransient<DocumentIntelligenceService>();
             builder.Services.AddTransient<AzureOpenAiService>();
