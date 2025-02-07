@@ -1,0 +1,4 @@
+Examples:
+"¿Cuál es la capital de España?"
+"e do japão?"  
+"Quem foi decimo presidente dos EUA?"
