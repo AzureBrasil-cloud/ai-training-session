@@ -1,6 +1,6 @@
 using Spectre.Console;
 
-namespace DocAssistantApp;
+namespace MultiLanguageAssistant;
 
 public static class CliInterface
 {

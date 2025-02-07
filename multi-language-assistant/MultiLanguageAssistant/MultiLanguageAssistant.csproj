@@ -5,8 +5,8 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>MultiLanguageAsssistant</AssemblyName>
-        <RootNamespace>MultiLanguageAsssistant</RootNamespace>
+        <AssemblyName>MultiLanguageAssistant</AssemblyName>
+        <RootNamespace>MultiLanguageAssistant</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

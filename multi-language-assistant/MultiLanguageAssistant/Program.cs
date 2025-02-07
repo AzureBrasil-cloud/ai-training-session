@@ -1,9 +1,8 @@
 ﻿#pragma warning disable OPENAI001
 using Azure;
 using Azure.AI.OpenAI;
-using DocAssistantApp;
 using Microsoft.Extensions.Configuration;
-using MultiLanguageAsssistant;
+using MultiLanguageAssistant;
 using OpenAI.Chat;
 
 var builder = new ConfigurationBuilder()

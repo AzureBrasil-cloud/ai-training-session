@@ -1,4 +1,4 @@
-namespace MultiLanguageAsssistant;
+namespace MultiLanguageAssistant;
 
 public class Constants
 {
