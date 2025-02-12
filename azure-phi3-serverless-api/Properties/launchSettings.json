@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "azure-phi3-serverless-api": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "AZML_MODEL_KEY": "f4XWtrbQNAu6qdBlIxbSmFv2Kak01Rgb"
+      }
+    }
+  }
+}

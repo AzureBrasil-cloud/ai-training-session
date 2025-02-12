@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Azure.AI.DocumentIntelligence;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
