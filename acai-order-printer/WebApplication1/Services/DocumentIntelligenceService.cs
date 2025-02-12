@@ -12,7 +12,11 @@ public class DocumentIntelligenceService(IConfiguration configuration)
     {
         var binaryData = await BinaryData.FromStreamAsync(document);
 
-        var operation = await _client.AnalyzeDocumentAsync(WaitUntil.Completed, new AnalyzeDocumentOptions("prebuilt-layout", binaryData));
+        var operation = await _client.AnalyzeDocumentAsync(WaitUntil.Completed, 
+            new AnalyzeDocumentOptions("prebuilt-layout", binaryData)
+            {
+                Features = { new DocumentAnalysisFeature("keyValuePairs") },
+            });
 
         return operation.Value;
     }
