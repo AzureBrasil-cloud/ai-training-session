@@ -22,11 +22,4 @@
       </None>
     </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="appsettings.Development.json" />
-      <Content Include="appsettings.Development.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
-    </ItemGroup>
-
 </Project>
