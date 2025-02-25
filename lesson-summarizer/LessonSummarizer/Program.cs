@@ -60,17 +60,7 @@ while (true)
     {
         if (!string.IsNullOrEmpty(contentItem.Text))
         {
-           var text = contentItem.Text;
-           
-            if (contentItem.TextAnnotations.Count > 0)
-            {
-                foreach (var annotation in contentItem.TextAnnotations)
-                {
-                    text = text.Replace(annotation.TextToReplace, $" (\U0001F4D5 Document Id: {annotation.InputFileId})");
-                }
-            }
-            
-            CliInterface.WriteLine($"{text}");
+            CliInterface.WriteLine($"{contentItem.Text}");
         }
     } 
             
