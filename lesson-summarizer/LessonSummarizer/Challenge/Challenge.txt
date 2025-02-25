@@ -1,0 +1,4 @@
+Challenge: If you type something not related to the loaded file, the app must respond with "I DON'T KNOW WHAT YOU'RE TALKING ABOUT!".
+
+- Add to the Constants.cs file, on property AssistantInstructions, the follow string:
+If you do not find any content in the files, you must answer with a default message: 'I DON'T KNOW WHAT YOU'RE TALKING ABOUT!'
