@@ -54,7 +54,7 @@ while (true)
     await using var enumerator = messagePage.GetAsyncEnumerator();
     var messageItem = await enumerator.MoveNextAsync() ? enumerator.Current : null;
     
-    CliInterface.WriteLine($"{Environment.NewLine}\U0001F60A Assistant {Environment.NewLine}");
+    CliInterface.WriteLine($"{Environment.NewLine}\U0001F60A Assistente {Environment.NewLine}");
     
     foreach (var contentItem in messageItem!.Content)
     {
@@ -64,8 +64,8 @@ while (true)
         }
     } 
             
-    CliInterface.WriteLine($"\U0001F4B0 Output tokens: {threadRun.Usage.OutputTokenCount}");
-    CliInterface.WriteLine($"\U0001F4B0 Input tokens: {threadRun.Usage.InputTokenCount}");
+    CliInterface.WriteLine($"\U0001F4B0 Tokens de saída: {threadRun.Usage.OutputTokenCount}");
+    CliInterface.WriteLine($"\U0001F4B0 Tokens de entrada: {threadRun.Usage.InputTokenCount}");
     CliInterface.WriteLine($"\U0001F4B0 Total de tokens: {threadRun.Usage.TotalTokenCount}");
     
     CliInterface.BreakLine();
